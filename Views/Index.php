@@ -1,144 +1,59 @@
-<?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-$index = new Index();
-$test = $index->doSomething();
+<?php 
+	require "Views/templates/header.php";
+	if(isset($_SESSION["loggedIn"])) { ?>
+	<section class="column">
+		<h1 class="title">Herzlich Willkommen <?php echo " ".$_SESSION["loggedInUser"]?></h1>
+		<h1>Vue JS</h1>
+		<div id="test">
+			<input type="text" v-model="firstname" placeholder="firstname">
+			<input type="text" v-model="lastname" placeholder="lastname">
+			<h1>{{ firstname }} {{ lastname }}</h1>
+		</div>
+	</section>
+	
+<?php }else{ ?>
 
-?>
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<META http-equiv="Content-Style-Type" content="text/css">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Scratch</title>
-	<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
-	<!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
-	<!-- <script src="http://malsup.github.com/jquery.form.js"></script>  -->
-	<!-- <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script> -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<?php }?>
+	<section class="column">
 
-
-	<script type="text/javascript">
-		function vueJS() {
-			var vue = new Vue({
-				el: '#test',
-				data: {
-					firstname: '',
-					lastname: ''
-
-				},
-
-				// methods: {
-				// 	write: function() {
-				// 		return this.firstname+" "+this.lastname;
-				// 	}
-				// }
-			})
-		}
-		$(document).ready(function(){
-			vueJS();
-		});
-	</script>
-</head>
-<body>
-<header class="header-image">
-	<section class="hero is-medium">
-				<!-- Hero head: will stick at the top -->
-				<div class="hero-head">
-					<nav class="navbar is-fixed-top is-info is-bold">
-						<div class="container">
-							<div class="navbar-brand">
-								<a class="navbar-item">
-									<img src="https://bulma.io/images/bulma-type-white.png" alt="Logo">
-								</a>
-								<span class="navbar-burger burger" data-target="navbarMenuHeroA">
-									<span></span>
-									<span></span>
-									<span></span>
-								</span>
-							</div>
-							<div id="navbarMenuHeroA" class="navbar-menu">
-								<div class="navbar-end">
-									<a class="navbar-item is-active">
-										Home
-									</a>
-									<a class="navbar-item">
-										Examples
-									</a>
-									<a class="navbar-item">
-										Documentation
-									</a>
-									<span class="navbar-item">
-										<a class="button is-primary is-inverted">
-											<span class="icon">
-												<i class="fab fa-github"></i>
-											</span>
-											<span>Download</span>
-										</a>
-									</span>
-								</div>
-							</div>
-						</div>
-					</nav>
-				</div>
-				<!-- Hero content: will be in the middle -->
-				<div class="hero-body">
-					<div class="container has-text-centered">
-						<h1 class="title">
-						Title
-						</h1>
-						<h2 class="subtitle">
-						Subtitle
-						</h2>
-					</div>
-				</div>
-				<!-- Hero footer: will stick at the bottom -->
-				<div class="hero-foot">
-					<nav class="tabs">
-						<div class="container">
-							<ul>
-								<li class="is-active"><a href="#about">Overview</a></li>
-								<li><a href="#team">Modifiers</a></li>
-								<li><a>Grid</a></li>
-								<li><a>Elements</a></li>
-								<li><a>Components</a></li>
-								<li><a>Layout</a></li>
-							</ul>
-						</div>
-					</nav>
-				</div>
-			</section>
-
-</header>
-	<h1>Vue JS</h1>
-	<div id="test">
-		<input type="text" v-model="firstname" placeholder="firstname">
-		<input type="text" v-model="lastname" placeholder="lastname">
-		<h1>{{ firstname }} {{ lastname }}</h1>
-	</div>
-
-	<h1>Register</h1>
-	<div class="registerform">
-		<form method="POST" id="createUserForm">
-			<input type="text" name="username" required>
-			<input type="password" name="password" required>
-			<input type="submit" name="register">
-		</form>
-	</div>
-<h2>Alle Benutzer</h2>
+		<h2 class="title is-2 ">Alle Benutzer</h2>
 	<?php
+		$test= Index::listUsers();
+
 		foreach ($test as $value) {
-		    print_r("<pre>".$value["name"]."<a href='?delete=".$value["id_user"]."'> delete</a><a href='?pdf=".$value["id_user"]."'> generate PDF</a></pre>");
+		    echo "<pre>".$value["name"]."<a href='?delete=".$value["id_user"]."'> delete</a></pre>";
 		}
 	?>
-
-
-
-<script type="text/javascript" src="js/app.js"></script>
-
-</body>
-</html>
+	</section>
+			<section id="about" class=" is-vcentered columns column">
+				<div class="column is-half">
+					<figure class="image is-fullwidth">
+						<img src="../assets/article_img.jpg">
+					</figure>
+				</div>
+				<div class="is-half column">
+					<div class="container">
+						<h1 class="title is-size-2 has-text-centered">Post1</h1>
+						<p>
+						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop pubdivshing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+					</div>
+				</div>
+			</section>
+			<section id="team" class="columns column is-vcentered">
+				<div class="column is-half">
+					<figure class="image is-fullwidth">
+						<img src="../assets/article_img2.jpg">
+					</figure>
+				</div>
+				<div class="is-half column">
+					<div class="container">
+						<h1 class="title is-size-2 has-text-centered">Post2</h1>
+						<p>
+						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+					</div>
+				</div>
+			</section>
+			
+			<?php
+				require "Views/templates/footer.html";
+			?>

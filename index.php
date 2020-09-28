@@ -1,7 +1,10 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_RECOVERABLE_ERROR|E_ERROR|E_CORE_ERROR);
+ ob_start();
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 session_start();
-
+	
 	require_once('Routes.php');
 
 	function __autoload($class_name) {
@@ -11,5 +14,6 @@ session_start();
 			require_once './Controllers/'.$class_name.'.php';
 		}
 	}
+	ob_end_flush();
 ?>
 

@@ -7484,7 +7484,7 @@ html {
   scroll-behavior: smooth; }
 
 header.header-image {
-  background-image: url("../header.jpg");
+  background-image: url("../../assets/header.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -7492,6 +7492,11 @@ header.header-image {
   header.header-image section div nav.is-info {
     background-color: #3298dc !important;
     color: #fff; }
+
+main {
+  max-width: 850px;
+  margin: 3rem auto;
+  padding: 0 2rem; }
 
 .is-transparent {
   opacity: 0.5; }

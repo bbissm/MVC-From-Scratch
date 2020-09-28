@@ -1,12 +1,12 @@
 @charset "utf-8";
-@import "../node_modules/bulma/bulma.sass";
+@import "node_modules/bulma/bulma.sass";
 
 html {
 	  scroll-behavior: smooth;
 }
 
 header.header-image{
-	background-image: url("../header.jpg");
+	background-image: url("../../assets/header.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -19,6 +19,12 @@ header.header-image{
 			}	
 		}
 	}
+}
+
+main {
+	max-width: 850px;
+    margin: 3rem auto;
+    padding: 0 2rem;
 }
 
 .is-transparent {
