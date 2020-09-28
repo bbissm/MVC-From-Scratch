@@ -59,6 +59,7 @@
 									<a class="navbar-item">
 										Contact Us
 									</a> -->
+
 									<?php if(!isset($_SESSION["loggedIn"])) { ?>
 									<span class="navbar-item">
 										<a href="/login" class="is-inverted is-primary button">
@@ -66,6 +67,9 @@
 										</a>
 									</span>
 								<?php } ?>
+									<a class="navbar-item" href="createBlog">
+										Blog
+									</a>
 									<span class="navbar-item">
 										<a href="/register" class="is-inverted is-primary button">
 											Registration

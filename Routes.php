@@ -20,4 +20,8 @@
 		LoginForm::CreateView('LoginForm');	
 	});
 
+	Route::set('createBlog', function() {
+		CreateBlog::CreateView('CreateBlog');	
+	});
+
 ?>

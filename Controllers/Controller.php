@@ -28,6 +28,14 @@
 					static::checkUserLogin();
 				}
 			}
+			if($viewName == "CreateBlog") {
+				if(isset($_POST["createBlog"])) {
+					static::create();
+				}
+				if(isset($_GET["logout"])) {
+					static::logout();
+				}
+			}
 		}
 	}
 ?>

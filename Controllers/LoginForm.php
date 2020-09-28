@@ -9,7 +9,7 @@
 				if($_POST["uname"] == $value["name"] && $_POST["pwd"] !== $value["password"]){
 					// echo "falsches Passwort";
 				}elseif($_POST["uname"] == $value["name"] && $_POST["pwd"] == $value["password"]){
-					$_SESSION["loggedIn"] = 1;
+					$_SESSION["loggedIn"] = $value["id_user"];;
 					$_SESSION["loggedInUser"] = $value["name"];
 					header('Location: /');
 				}
