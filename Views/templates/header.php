@@ -12,6 +12,7 @@
 		<!-- <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script> -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript" src="node_modules/bulma-accordion/dist/js/bulma-accordion.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="Views/css/mystyles.css">
 		<script type="text/javascript">
 			function vueJS() {
@@ -29,7 +30,10 @@
 				})
 			}
 			$(document).ready(function(){
-				vueJS();
+				var accordions = bulmaAccordion.attach(); // accordions now contains an array of all Accordion instances
+
+				// vueJS();
+
 			});
 		</script>
 	</head>
@@ -59,17 +63,21 @@
 									<a class="navbar-item">
 										Contact Us
 									</a> -->
-
+									
 									<?php if(!isset($_SESSION["loggedIn"])) { ?>
 									<span class="navbar-item">
 										<a href="/login" class="is-inverted is-primary button">
 											Login
 										</a>
 									</span>
-								<?php } ?>
-									<a class="navbar-item" href="createBlog">
-										Blog
+								<?php }else{ ?>
+									<a class="navbar-item" href="myProfile">
+										Mein Profil
 									</a>
+									<a class="navbar-item" href="createBlog">
+										Mein Blog
+									</a>
+								<?php } ?>
 									<span class="navbar-item">
 										<a href="/register" class="is-inverted is-primary button">
 											Registration

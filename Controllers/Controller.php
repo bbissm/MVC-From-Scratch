@@ -32,6 +32,20 @@
 				if(isset($_POST["createBlog"])) {
 					static::create();
 				}
+				if(isset($_GET["deleteBlog"])) {
+					static::deleteBlog();
+				}
+				if(isset($_GET["logout"])) {
+					static::logout();
+				}
+			}
+
+			if($viewName == "EditProfile") {
+
+				$showProfile = static::showProfile();
+				if(isset($_POST["editProfile"])) {
+					static::edit();
+				}
 				if(isset($_GET["logout"])) {
 					static::logout();
 				}

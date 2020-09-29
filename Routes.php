@@ -24,4 +24,8 @@
 		CreateBlog::CreateView('CreateBlog');	
 	});
 
+	Route::set('myProfile', function() {
+		EditProfile::CreateView('EditProfile');	
+	});
+
 ?>

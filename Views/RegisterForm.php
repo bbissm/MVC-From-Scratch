@@ -12,34 +12,38 @@
 </div> -->
 
 <div class="field">
-  <label class="label">Username</label>
+  <label class="label">Vorname</label>
   <div class="control has-icons-left has-icons-right">
 <!--     <input class="input is-success" type="text" name="username" placeholder="Text input"> -->    
-    <input class="input" type="text" name="username" placeholder="Text input">
-
-    <span class="icon is-small is-left">
-      <i class="fas fa-user"></i>
-    </span>
-    <span class="icon is-small is-right">
-      <i class="fas fa-check"></i>
-    </span>
+    <input class="input" type="text" name="prename" placeholder="Text input">
   </div>
   <!-- <p class="help is-success">This username is available</p> -->
 </div>
 
-<!-- <div class="field">
+<div class="field">
+  <label class="label">Nachname</label>
+  <div class="control has-icons-left has-icons-right">
+<!--     <input class="input is-success" type="text" name="username" placeholder="Text input"> -->    
+    <input class="input" type="text" name="lastname" placeholder="Text input">
+  </div>
+  <!-- <p class="help is-success">This username is available</p> -->
+</div>
+
+<div class="field">
+  <label class="label">Username</label>
+  <div class="control has-icons-left has-icons-right">
+<!--     <input class="input is-success" type="text" name="username" placeholder="Text input"> -->    
+    <input class="input" type="text" name="username" placeholder="Text input">
+  </div>
+  <!-- <p class="help is-success">This username is available</p> -->
+</div>
+
+<div class="field">
   <label class="label">Email</label>
   <div class="control has-icons-left has-icons-right">
-    <input class="input is-danger" type="email" placeholder="Email input">
-    <span class="icon is-small is-left">
-      <i class="fas fa-envelope"></i>
-    </span>
-    <span class="icon is-small is-right">
-      <i class="fas fa-exclamation-triangle"></i>
-    </span>
+    <input class="input" type="email" placeholder="Email input" name="email">
   </div>
-  <p class="help is-danger">This email is invalid</p>
-</div> -->
+</div>
 
 <div class="field">
   <label class="label">Password</label>

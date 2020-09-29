@@ -2,9 +2,8 @@
 require "Views/templates/header.php";
 $blog = CreateBlog::listBlogs();
 ?>
-
 <section>
-	<h1 class="title">Erstelle deinen Blog</h1>
+	<h1 class="title">Erstelle einen Blog</h1>
 	<form method="POST">
 
 	<div class="field">
@@ -28,31 +27,24 @@ $blog = CreateBlog::listBlogs();
 </section>
 
 <section>
-	<h1 class="title">All Blogs</h1>
+	<h1 class="title">Meine Blogs</h1>
 	<?php
 	foreach ($blog as $key => $value) {
 		echo "<hr>";
 		echo "<div class='columns'>";
 			echo "<div class='column is-2'>";
-				echo "<img src='assets/article_img.jpg'>";
-				echo "<p >".$value["name"]."</p>";
+				echo "<img src='".$value["image"]."'>";
+				echo "<p >".$value["prename"]." ". $value["lastname"]."</p>";
 			echo "</div>";
 			echo "<div class='column'>";
 				echo "<h1 class='subtitle'>".$value["title"]."</h1>";
 				echo "<p class='text'>".$value["text"]."</p>";
+				echo "<a class='button is-success mr-3' href='?editBlog=".$value["id_blog"]."'>Editieren</a>";
+				echo "<a class='button is-danger mr-3' href='?deleteBlog=".$value["id_blog"]."'>Löschen</a>";
 			echo "</div>";
 		echo "</div>";
-
-
-
-
 	}
-
 	?>
-	<div>
-		<h1 class="subtitle"></h1>
-	</div>
-
 </section>
 
 

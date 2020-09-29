@@ -9,8 +9,16 @@
 		}
 
 		public static function listBlogs() {
-			$result = self::query("Select * FROM mvc_project.blog as b JOIN mvc_project.users as u on u.id_user=b.user_fk");
+			$result = self::query("Select * FROM mvc_project.blog as b JOIN mvc_project.users as u on u.id_user=b.user_fk WHERE u.id_user=".$_SESSION["loggedIn"]);
 			return $result;			
+		}
+
+		public static function deleteBlog()
+		{
+			echo $_SERVER['REQUEST_URI'];
+			$delete = self::query("DELETE FROM mvc_project.blog WHERE id_blog=".$_GET["deleteBlog"]);
+			header('Location: /createBlog');
+
 		}
 
 		public static function logout()
