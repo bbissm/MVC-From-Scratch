@@ -1,9 +1,11 @@
 <?php
 	class CreateBlog extends Controller {
+
 		public static function create()
 		{
-			print_r($_SESSION);
-			$insert = self::query("INSERT INTO mvc_project.blog (title,text,user_fk) VALUES ('".$_POST["title"]."','".$_POST["text"]."','".$_SESSION["loggedIn"]."')");
+			$text = str_replace("'", "", $_POST["text"]);
+			$query = "INSERT INTO mvc_project.blog (title,text,user_fk) VALUES ('".$_POST["title"]."','".$text."','".$_SESSION["loggedIn"]."')";
+			self::query($query);
 			header('Location: '.$_SERVER['REQUEST_URI']);
 			
 		}

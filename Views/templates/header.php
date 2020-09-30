@@ -6,12 +6,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Scratch</title>
-		<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
-		<!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
-		<!-- <script src="http://malsup.github.com/jquery.form.js"></script>  -->
-		<!-- <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script> -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="Views/js/jquery.min.js"></script>
+		<script type="text/javascript" src="Views/js/vue.js"></script>
 		<script type="text/javascript" src="node_modules/bulma-accordion/dist/js/bulma-accordion.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="Views/css/mystyles.css">
 		<script type="text/javascript">
@@ -32,7 +28,7 @@
 			$(document).ready(function(){
 				var accordions = bulmaAccordion.attach(); // accordions now contains an array of all Accordion instances
 
-				// vueJS();
+				vueJS();
 
 			});
 		</script>
@@ -46,7 +42,8 @@
 						<div class="container">
 							<div class="navbar-brand">
 								<a class="navbar-item" href="/">
-									<img src="https://bulma.io/images/bulma-type-white.png" alt="Logo">
+									<!-- <img src="https://bulma.io/images/bulma-type-white.png" alt="Logo"> -->
+									<p>My Project</p>
 								</a>
 								<span class="navbar-burger burger" data-target="navbarMenuHeroA">
 									<span></span>

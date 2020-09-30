@@ -33,7 +33,7 @@
   <label class="label">Username</label>
   <div class="control has-icons-left has-icons-right">
 <!--     <input class="input is-success" type="text" name="username" placeholder="Text input"> -->    
-    <input class="input" type="text" name="username" placeholder="Text input">
+    <input class="input" type="text" name="username" placeholder="Text input" required>
   </div>
   <!-- <p class="help is-success">This username is available</p> -->
 </div>
@@ -41,14 +41,14 @@
 <div class="field">
   <label class="label">Email</label>
   <div class="control has-icons-left has-icons-right">
-    <input class="input" type="email" placeholder="Email input" name="email">
+    <input class="input" type="email" placeholder="Email input" name="email" required>
   </div>
 </div>
 
 <div class="field">
   <label class="label">Password</label>
   <p class="control has-icons-left">
-    <input class="input" type="password" name="password" placeholder="Password">
+    <input class="input" type="password" name="password" placeholder="Password" required>
     <span class="icon is-small is-left">
       <i class="fas fa-lock"></i>
     </span>
