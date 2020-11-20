@@ -1,5 +1,5 @@
 @charset "utf-8";
-@import "node_modules/bulma/bulma.sass";
+@import "../../node_modules/bulma/bulma.sass";
 
 html {
 	  scroll-behavior: smooth;
@@ -29,4 +29,14 @@ main {
 
 .is-transparent {
     opacity: 0.5;
+}
+
+section{
+	padding: 3rem 0;
+}
+
+.inner-container{
+	width:100%;
+	max-width: calc(100% - 20px);
+	margin:0 auto;
 }

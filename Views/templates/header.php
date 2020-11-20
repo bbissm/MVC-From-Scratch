@@ -6,10 +6,23 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Scratch</title>
+
+		<!-- JAVASCRIPTS -->
 		<script src="Views/js/jquery.min.js"></script>
-		<script type="text/javascript" src="Views/js/vue.js"></script>
-		<script type="text/javascript" src="node_modules/bulma-accordion/dist/js/bulma-accordion.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="Views/css/mystyles.css">
+		<script src="Views/js/vue.js" type="text/javascript"></script>
+		<script src="node_modules/bulma-accordion/dist/js/bulma-accordion.min.js" type="text/javascript" ></script>
+		<script defer src="node_modules/bulma-accordion/dist/js/bulma-accordion.min.js"></script>
+		<script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+		<!-- JAVASCRIPTS ENDE -->
+
+		<!-- STYLESHEETS -->
+		<link rel="stylesheet" type="text/css" href="node_modules/bulma-accordion/dist/css/bulma-accordion.min.css">
+
+			<!-- MY STYLE -->
+			<link rel="stylesheet" type="text/css" href="Views/css/mystyles.css">
+
+		<!-- STYLESHEETS ENDE-->
+
 		<script type="text/javascript">
 			function vueJS() {
 				var vue = new Vue({
@@ -27,7 +40,7 @@
 			}
 			$(document).ready(function(){
 				var accordions = bulmaAccordion.attach(); // accordions now contains an array of all Accordion instances
-
+				console.log(accordions);
 				vueJS();
 
 			});

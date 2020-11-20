@@ -1,6 +1,6 @@
 <?php
 
-	Route::set('index', function() {
+	Route::set('home', function() {
 		Index::CreateView('Index');	
 	});
 
@@ -27,5 +27,4 @@
 	Route::set('myProfile', function() {
 		EditProfile::CreateView('EditProfile');	
 	});
-
 ?>

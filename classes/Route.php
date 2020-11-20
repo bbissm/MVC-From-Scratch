@@ -10,7 +10,7 @@
 		    if(isset($_GET["url"])){
 		    	$url = $_GET["url"];
 		    }else{
-		    	$url = "index";
+		    	$url = "home";
 		    }
 		    if($url == $route) {
 		        $function->__invoke();

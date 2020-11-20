@@ -1,6 +1,7 @@
 <?php
 	class RegisterForm extends Controller {
-		public static function listUsers() {
+		public static function listUsers() 
+		{
 			$result = self::query("Select * FROM mvc_project.users");
 			return $result;			
 		}
