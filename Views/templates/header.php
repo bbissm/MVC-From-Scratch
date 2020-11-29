@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 	<head>
 		<meta charset="utf-8">
-		<META http-equiv="Content-Style-Type" content="text/css">
+		<!--<meta http-equiv="Content-Style-Type" content="text/css">-->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Scratch</title>
@@ -13,6 +13,7 @@
 		<script src="node_modules/bulma-accordion/dist/js/bulma-accordion.min.js" type="text/javascript" ></script>
 		<script defer src="node_modules/bulma-accordion/dist/js/bulma-accordion.min.js"></script>
 		<script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+        <script src="Views/js/main.js" type="text/javascript"></script>
 		<!-- JAVASCRIPTS ENDE -->
 
 		<!-- STYLESHEETS -->
@@ -22,29 +23,6 @@
 			<link rel="stylesheet" type="text/css" href="Views/css/mystyles.css">
 
 		<!-- STYLESHEETS ENDE-->
-
-		<script type="text/javascript">
-			function vueJS() {
-				var vue = new Vue({
-					el: '#test',
-					data: {
-						firstname: '',
-						lastname: ''
-					},
-					// methods: {
-						// 	write: function() {
-							// 		return this.firstname+" "+this.lastname;
-						// 	}
-					// }
-				})
-			}
-			$(document).ready(function(){
-				var accordions = bulmaAccordion.attach(); // accordions now contains an array of all Accordion instances
-				console.log(accordions);
-				vueJS();
-
-			});
-		</script>
 	</head>
 	<body>
 		<header class="header-image">
