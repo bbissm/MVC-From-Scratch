@@ -1,8 +1,6 @@
 window.onload = function () {
     const slider = document.getElementById("myRange");
     const output = document.getElementById("demo");
-    const post1 = document.getElementById("post1");
-    const post2 = document.getElementById("post2");
     const posts = document.querySelectorAll(".geschmackContainer");
     const resetRange = document.getElementById("resetRange");
     const ratingSelect = document.getElementById("ratingSelect");
@@ -53,3 +51,28 @@ window.onload = function () {
     });
 
 }
+
+function vueJS() {
+    const test = document.getElementById("test");
+    if(test){
+        //var vue = new Vue({
+            //el: '#test',
+            //data: {
+                //firstname: '',
+                //lastname: ''
+            //}//,
+            // methods: {
+            // 	write: function() {
+            // 		return this.firstname+" "+this.lastname;
+            // 	}
+            // }
+        //})
+    }
+
+}
+$(document).ready(function(){
+    var accordions = bulmaAccordion.attach(); // accordions now contains an array of all Accordion instances
+    console.log(accordions);
+    vueJS();
+
+});
