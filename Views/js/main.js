@@ -1,0 +1,55 @@
+window.onload = function () {
+    const slider = document.getElementById("myRange");
+    const output = document.getElementById("demo");
+    const post1 = document.getElementById("post1");
+    const post2 = document.getElementById("post2");
+    const posts = document.querySelectorAll(".geschmackContainer");
+    const resetRange = document.getElementById("resetRange");
+    const ratingSelect = document.getElementById("ratingSelect");
+
+    const filter = {"rating": 0, "geschmack": 0};
+
+    console.log(ratingSelect);
+
+
+    // Function Filter
+    const filterEntry = function(){
+        posts.forEach(post => {
+            console.log(filter);
+            post.classList.remove("is-hidden");
+
+            //Filter Geschmack
+            let geschmack = parseInt(post.dataset.geschmack);
+            if(filter.geschmack !== 0 && filter.geschmack !== geschmack) {
+                post.classList.add("is-hidden");
+            }
+            //Filter Rating
+            let rating = parseInt(post.dataset.rating);
+            if(filter.rating !== 0 && filter.rating !== rating){
+                post.classList.add("is-hidden");
+            }
+        });
+    };
+    // Update the current slider value (each time you drag the slider handle)
+    slider.oninput = function() {
+        if(this.value !== 0){
+            output.innerHTML = this.value;
+        }
+        filter.geschmack = parseInt(this.value);
+        filterEntry();
+
+    }
+    ratingSelect.addEventListener("change", function(){
+        filter.rating = parseInt(this.value);
+        filterEntry();
+    });
+
+
+
+    resetRange.addEventListener("click", function(){
+        output.innerHTML = "";
+        slider.value = 0;
+        filter.geschmack = 0;
+    });
+
+}

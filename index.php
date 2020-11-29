@@ -7,13 +7,9 @@ session_start();
 	
 	require_once('Routes.php');
 
-	require_once 'vendor/autoload.php';
-	$loader = new \Twig\Loader\FilesystemLoader('Views');
-	$twig = new \Twig\Environment($loader, [
-	    'cache' => 'cache',
-	]);
+	
 
-	echo $twig->render('index.html.twig', ['name' => 'Fabien']);
+	// echo $twig->render('index.html.twig', ['name' => 'Fabien']);
 
 	function __autoload($class_name) {
 
