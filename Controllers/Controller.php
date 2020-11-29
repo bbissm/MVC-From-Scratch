@@ -1,5 +1,11 @@
 <?php
+	// require_once 'vendor/autoload.php';
+
 	class Controller extends Database {
+		// const $loader = new \Twig\Loader\FilesystemLoader('Views');
+		// const $twig = new \Twig\Environment($loader, [
+	 //    	'cache' => 'cache',
+		// ]);
 
 		public static function CreateView($viewName) {
 			echo $viewName;
@@ -43,7 +49,7 @@
 
 			if($viewName == "EditProfile") {
 
-				$showProfile = static::showProfile();
+				//$showProfile = static::showProfile();
 				if(isset($_POST["editProfile"])) {
 					static::edit();
 				}
