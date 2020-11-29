@@ -4,11 +4,11 @@
 	<section class="column">
 		<h1 class="title">Herzlich Willkommen <?php echo " ".$_SESSION["loggedInUser"]?></h1>
 		<h1>Vue JS</h1>
-		<div id="test">
+		<!--<div id="test">
 			<input type="text" v-model="firstname" placeholder="firstname">
 			<input type="text" v-model="lastname" placeholder="lastname">
 			<h1>{{ firstname }} {{ lastname }}</h1>
-		</div>
+		</div>-->
 	</section>
 	
 <?php }else{ ?>
@@ -29,11 +29,45 @@
 		echo "</section>";
 	}
 	?>
+
+    <!-- FILTER SELECT ------->
+    <section>
+        <label for="ratingSelect">Wähle ein Rating aus:</label>
+        <select id="ratingSelect">
+            <option value="0">Select Rating</option>
+            <option value="1">Rating 1</option>
+            <option value="2">Rating 2</option>
+            <option value="3">Rating 3</option>
+            <option value="4">Rating 4</option>
+            <option value="5">Rating 5</option>
+        </select>
+    </section>
+    <!-- ENDE FILTER SELECT --------->
+    <!-- Range SLIDER -------->
+    <div class="slidecontainer">
+        <div class="columns">
+            <div class="column is-half">
+                <div class="columns">
+                    <div class="column is-4">
+                        <label for="myRange">Dein Geschmack:</label>
+                        <input type="range" min="0" max="10" value="0" class="slider" id="myRange">
+                    </div>
+                    <div class="column is-1">
+                        <p id="demo"></p><br>
+                    </div>
+                    <div class="column is-4">
+                        <a id="resetRange" class="button">Reset</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- RANGE SLIDER ENDE ------->
 	
-			<section id="about" class=" is-vcentered columns column">
+			<section id="post1" class="geschmackContainer is-vcentered columns column" data-geschmack="2" data-rating="5">
 				<div class="column is-half">
 					<figure class="image is-fullwidth">
-						<img src="../assets/article_img.jpg">
+						<img src="../assets/article_img.jpg" alt="test">
 					</figure>
 				</div>
 				<div class="is-half column">
@@ -44,7 +78,7 @@
 					</div>
 				</div>
 			</section>
-			<section id="team" class="columns column is-vcentered">
+			<section id="post2" class="geschmackContainer columns column is-vcentered" data-geschmack="5" data-rating="2">
 				<div class="is-half column">
 					<div class="container">
 						<h1 class="title is-size-2 has-text-centered">Post2</h1>
@@ -54,7 +88,7 @@
 				</div>
 				<div class="column is-half">
 					<figure class="image is-fullwidth">
-						<img src="../assets/article_img2.jpg">
+						<img src="../assets/article_img2.jpg" alt="test">
 					</figure>
 				</div>
 				
