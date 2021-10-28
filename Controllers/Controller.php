@@ -2,12 +2,8 @@
 	// require_once 'vendor/autoload.php';
 
 	class Controller extends Database {
-		// const $loader = new \Twig\Loader\FilesystemLoader('Views');
-		// const $twig = new \Twig\Environment($loader, [
-	 //    	'cache' => 'cache',
-		// ]);
-
 		public static function CreateView($viewName) {
+
 			echo $viewName;
 			require_once("./Views/".$viewName.".php");
 			if($viewName == "Index") {
@@ -21,6 +17,10 @@
 				if(isset($_GET["delete"])){
 					static::deleteUser();
 				}
+			}
+			if($viewName == "Index.html.twig"){
+				echo $twig->render('Index.html.twig', ['the' => 'variables', 'go' => 'here']);
+
 			}
 			if($viewName == "RegisterForm") {
 				if(isset($_POST["register"])) {

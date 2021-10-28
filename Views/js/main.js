@@ -1,4 +1,6 @@
 window.onload = function () {
+        alert();
+
     const slider = document.getElementById("myRange");
     const output = document.getElementById("demo");
     const posts = document.querySelectorAll(".geschmackContainer");
@@ -70,9 +72,12 @@ function vueJS() {
     }
 
 }
+
+
+
 $(document).ready(function(){
     var accordions = bulmaAccordion.attach(); // accordions now contains an array of all Accordion instances
-    console.log(accordions);
     vueJS();
+
 
 });

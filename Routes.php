@@ -27,4 +27,8 @@
 	Route::set('myProfile', function() {
 		EditProfile::CreateView('EditProfile');	
 	});
+
+	Route::set('index-twig', function() {
+		EditProfile::CreateView('Index.html.twig');	
+	});
 ?>

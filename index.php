@@ -11,6 +11,14 @@ session_start();
 
 	// echo $twig->render('index.html.twig', ['name' => 'Fabien']);
 
+		/*const $loader = new \Twig\Loader\FilesystemLoader('Views');
+		const $twig = new \Twig\Environment($loader, [
+	     		
+	     		'cache' => 'cache',
+				
+			]);*/
+
+
 	function __autoload($class_name) {
 
 		if(file_exists('./classes/'.$class_name.'.php')){

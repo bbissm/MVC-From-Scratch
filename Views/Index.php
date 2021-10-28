@@ -29,6 +29,41 @@
 		echo "</section>";
 	}
 	?>
+	<hr>
+	<h1>Testing Form submit AJAX
+		<form id="submitData" method="POST" enctype="multipart/form-data">
+			<input type="hidden" id="restorationID" name="restorationID" value="">
+			<input type="hidden" id="fk_inventaire" name="fk_inventaire" value="">
+			<?php 
+				print_r($_POST);
+			
+				for ($i=1; $i < 4; $i++) { 
+					echo "<pre>";
+					echo "<label>Button ".$i."</label><a style='margin-left:20px;' class='is-danger button deleteBtn'><input type='hidden' value='".$i."'>Löschen</a>";
+					echo "</pre>";
+				}
+				echo "<a style='margin-top:20px;' class='is-success button' id='addBtn'><input type='hidden' value='74'>Hinzufügen</a>";
+
+				
+			?>
+		</form>
+
+		<script type="text/javascript">
+			$(".deleteBtn").each(function() {
+			    $(this).click(function(){
+			        $("#restorationID").val($(this).children('input').val());
+			        $("#submitData").submit();
+			    })
+			});
+
+			$("#addBtn").click(function(){
+				console.log($(this).children('input').val());
+				$("#fk_inventaire").val($(this).children('input').val());
+				$("#submitData").submit();
+			});	
+
+		</script>
+	<hr>
 
     <!-- FILTER SELECT ------->
     <section>
